@@ -2,22 +2,22 @@
     defined('BASE_PATH') or exit('No se permite acceso directo');
     //devuelve la url del proyecto
     function base_url(){
-        return URI;
+        return BASE_URL;
     }
 
     //devuelve la ruta assets
     function media(){
-        return BASE_URL."/assets";
+        return BASE_URL."/Assets";
     }
     
     //incorporar  los templates a las vistas
-    function view_header($data= array()){
-        $header = "Views/Template/header.php";
+    function view_header(){
+        $header = "./app/Views/Template/header.php";
         require_once($header);
     }
 
-    function view_footer($data= array()){
-        $header = "Views/Template/footer.php";
+    function view_footer(){
+        $header = "./app/Views/Template/footer.php";
         require_once($header);
     }
 

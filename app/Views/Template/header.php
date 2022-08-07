@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Sebastián">
-    <title><?php echo $data['page_tag']?></title>
+    <title></title>
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo media()?>/css/main.css">
     <link rel="stylesheet" type="text/css" href="<?php echo media()?>/css/style.css">
@@ -14,7 +14,7 @@
   </head>
   <body class="app sidebar-mini">
     <!-- Navbar-->
-    <header class="app-header"><a class="app-header__logo" href="<?php echo base_url() ?>"><?php echo $data['page_name']?></a>
+    <header class="app-header"><a class="app-header__logo" href="<?php echo base_url() ?>"></a>
       <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       <ul class="app-nav">
         <li class="app-search">

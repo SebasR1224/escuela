@@ -18,6 +18,7 @@ const PATH_VIEWS = "escuela/app/Views/";
 const HELPER_PATH = "system/helpers/";
 define('LIBS_ROUTE', ROOT . FOLDER_PATH . '/system/libs/');
 
+
 //conexion a la base de datos;
 const DB_HOST = "localhost";    
 const DB_USER = "root";    
