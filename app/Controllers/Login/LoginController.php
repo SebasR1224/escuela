@@ -1,14 +1,18 @@
 <?php 
 defined('BASE_PATH') or exit('No se permite acceso directo');
 require_once (ROOT . '/escuela/app/Models/Login/LoginModel.php');
+require_once LIBS_ROUTE .'Session.php';
 
     class LoginController extends Controller
     {
 
     private $model;
+    private $session;    
+
     public function __construct()
     {
         $this->model = new LoginModel();
+        $this->session = new Session();
     }
 
     public function signIn($request_params){
@@ -24,7 +28,11 @@ require_once (ROOT . '/escuela/app/Models/Login/LoginModel.php');
         if(!password_verify($request_params['password'], $result['password'])){
             return $this->errorMessage("Datos de inicio de sesión incorrectos");
         }
-        echo "hola";
+        //Iniciar session;
+        
+        $this->session->init();
+        $this->session->add('email', $result['email']);
+        header('location: /escuela/dashboard');
 
     }
     public function verify($request_params){
