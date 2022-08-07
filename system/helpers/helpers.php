@@ -2,12 +2,12 @@
     defined('BASE_PATH') or exit('No se permite acceso directo');
     //devuelve la url del proyecto
     function base_url(){
-        return BASE_URL;
+        return FOLDER_PATH;
     }
 
     //devuelve la ruta assets
     function media(){
-        return BASE_URL."/Assets";
+        return FOLDER_PATH."/Assets";
     }
     
     //incorporar  los templates a las vistas
@@ -19,16 +19,7 @@
     function view_footer(){
         $header = "./app/Views/Template/footer.php";
         require_once($header);
-    }
-
-    //formata un array para vizualizarlo mejor
-    function dep($data){
-        $format = print_r('<pre>');
-        $format = print_r($data);
-        $format = print_r('<pre>');
-        return $format;
-    }
-    
+    }    
 
     //Limpia una cadea de texto
     function strClean($strCadena){
@@ -73,17 +64,6 @@
             $key .= substr($pattern, mt_rand(0,$max), 1);
         }
         return $key;
-    }
-
-    //generar token
-    function token()
-    {
-        $r1 = bin2hex(random_bytes(10));
-        $r2 = bin2hex(random_bytes(10));
-        $r3 = bin2hex(random_bytes(10));
-        $r4 = bin2hex(random_bytes(10));
-        $token = $r1.'-'.$r2.'-'.$r3.'-'.$r4;
-        return $token;
     }
 
 ?>

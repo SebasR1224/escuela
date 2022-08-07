@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Login 08</title>
+  	<title>iniciar Sesión</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -26,12 +26,15 @@
 		      	<div class="icon d-flex align-items-center justify-content-center mb-4">
 		      		<span class="fa fa-user-o"></span>
 		      	</div>
-				<form action="<?php echo base_url()?>login/sigin" method="POST" class="login-form">
+				<form action="<?php echo base_url()?>/login/signIn" method="POST" class="login-form">
 		      		<div class="form-group">
-		      			<input type="text" class="form-control rounded-left" placeholder="Email" id="txtEmail" name="txtEmail" required>
+		      			<input type="text" class="form-control rounded-left" placeholder="Email" id="email" name="email" >
 		      		</div>
 					<div class="form-group d-flex">
-						<input type="password" class="form-control rounded-left" placeholder="Contraseña" id="txtpassword" name="txtpassword" required>
+						<input type="password" class="form-control rounded-left" placeholder="Contraseña" id="password" name="password" >
+					</div>
+					<div class="form-group d-flex">
+						<label class="checkbox-primary"><?php !empty($error) ? print($error) : ''; ?></label>
 					</div>
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary rounded submit p-3 px-5">Ingresar</button>

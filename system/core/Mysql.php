@@ -60,5 +60,15 @@
             $delete =  $result->execute();
             return $delete;
         }
+
+        public function sigIn(string $email){
+            $email = $this->conexion->quote($email);
+
+            $this->query = "SELECT * FROM estudiantes where email={$email}";
+            $result = $this->conexion->prepare($this->query);
+            $result->execute();
+            $data = $result->fetch(PDO::FETCH_ASSOC);
+            return $data;
+        }
     }
 ?>

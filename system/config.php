@@ -10,7 +10,6 @@ date_default_timezone_set('America/Bogota');
 
 //Rutas
 const PROYECT_NAME = "Escuela";
-const BASE_URL = "http://localhost/Estudiantes/";
 const FOLDER_PATH = "/escuela";
 define('ROOT', $_SERVER['DOCUMENT_ROOT']); 
 const PATH_CONTROLLERS = "app/Controllers/";    

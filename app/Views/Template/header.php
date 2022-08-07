@@ -14,7 +14,7 @@
   </head>
   <body class="app sidebar-mini">
     <!-- Navbar-->
-    <header class="app-header"><a class="app-header__logo" href="<?php echo base_url() ?>"></a>
+    <header class="app-header"><a class="app-header__logo" href="<?php echo base_url() ?>">Escuela</a>
       <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       <ul class="app-nav">
         <li class="app-search">
@@ -24,8 +24,8 @@
         <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
           <ul class="dropdown-menu settings-menu dropdown-menu-right">
             <li><a class="dropdown-item" href="#"><i class="fa fa-cog fa-lg"></i> Ajustes</a></li>
-            <li><a class="dropdown-item" href="<?php echo base_url() ?>perfil"><i class="fa fa-user fa-lg"></i> Perfil</a></li>
-            <li><a class="dropdown-item" href="<?php echo base_url() ?>salir"><i class="fa fa-sign-out fa-lg"></i> Salir</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url() ?>7perfil"><i class="fa fa-user fa-lg"></i> Perfil</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url() ?>7salir"><i class="fa fa-sign-out fa-lg"></i> Salir</a></li>
           </ul>
         </li>
       </ul>
