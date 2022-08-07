@@ -1,0 +1,4 @@
+
+$('#tableEstudiantes').DataTable({
+    "ajax": ''
+});
