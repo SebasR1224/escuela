@@ -8,6 +8,6 @@
       </div>
       <ul class="app-menu">
         <li><a class="app-menu__item" href="<?php echo base_url() ?>/dashboard"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
-        <li><a class="app-menu__item" href="<?php echo base_url() ?>/estudiantes"><i class="app-menu__icon fa fa-book"></i><span class="app-menu__label">Estudiantes</span></a></li>
+        <li><a class="app-menu__item" href="<?php echo base_url() ?>/estudiante"><i class="app-menu__icon fa fa-book"></i><span class="app-menu__label">Estudiantes</span></a></li>
       </ul>
     </aside>
