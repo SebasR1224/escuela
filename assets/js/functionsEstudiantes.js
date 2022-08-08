@@ -11,14 +11,22 @@ tableEstudiantes = $('#tableEstudiantes').DataTable({
         {"data": "apellido"},
         {"data": "telefono"},
         {"data": "email"},
-        {"data": "estado"},
         {
             data: null,
             render: function ( data, type, row ) {
-                    return `<button type='button' class='btn btn-circle delete'>
-                                <i class='far fa-trash-alt text-danger'></i>
-                            </button>`+
-                            `<button type='button' class='btn btn-circle' data-toggle='modal' data-target='.userModal'>
+                if(data.estado == 1) {
+                    
+                    return `<button type="button" class="badge badge badge-success btn btn-success" onclick="cambiarEstado(${data.id}, ${data.estado})">Activo</button>`
+
+                }else if(data.estado == 0){
+                    return `<button type="button" class="badge badge badge-danger btn btn-danger" onclick="cambiarEstado(${data.id}, ${data.estado})">Inactivo</button>`
+                }
+            },
+        },
+        {
+            data: null,
+            render: function ( data, type, row ) {
+                    return  `<button type='button' class='btn btn-circle' data-toggle='modal' data-target='.userModal'>
                                 <i class='far fa-edit text-warning'></i>
                             </button>` +
                             `<button type='button' class='btn btn-circle'>
@@ -69,4 +77,36 @@ $("#formEstudiante").on('submit', function(e){
         }
     })
 })
+
+function cambiarEstado(id, estado){
+    Swal.fire({
+        title: '¿Estas seguro?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Aceptar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: '/escuela/estudiante/changeEstado',
+                type: 'POST',
+                data: 
+                {
+                    id:id,
+                    estado: estado
+                },
+                success: function(response) {
+                    console.log(response);
+                    tableEstudiantes.ajax.reload(null, false)
+                    Swal.fire(
+                        'Cambio realizado',
+                        'El estado del usuario a cambiado',
+                        'success'
+                    )
+                }
+            })
+        }
+      })
+}
 

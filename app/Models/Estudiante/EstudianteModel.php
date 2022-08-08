@@ -37,5 +37,11 @@
             return $request;
         }
 
+        public function changeEstado($id, $estado){
+            $query = "UPDATE estudiantes set estado = $estado where id=$id";
+            $request = $this->delete($query);
+            return $request;
+        }
+
     }
 ?>

@@ -34,5 +34,10 @@ require_once LIBS_ROUTE .'Session.php';
             $this->model->setEstudiante($params['dni'], $params['nombre'], $params['apellido'], $params['telefono'], $params['correo'], $params['password'], $params['estado']);
         }
 
+        public function changeEstado($params){
+            $estado = $params['estado'] == 1 ? 0 : 1;
+            $this->model->changeEstado($params['id'], $estado);
+        }
+
     }
 ?>

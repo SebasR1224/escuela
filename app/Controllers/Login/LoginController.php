@@ -28,8 +28,11 @@ require_once LIBS_ROUTE .'Session.php';
         if(!password_verify($request_params['password'], $result['password'])){
             return $this->errorMessage("Datos de inicio de sesión incorrectos");
         }
+        if($result['estado'] == 0){
+            return $this->errorMessage("Usuario inactivo");
+        }
+
         //Iniciar session;
-        
         $this->session->init();
         $this->session->add('email', $result['email']);
         header('location: /escuela/dashboard');
