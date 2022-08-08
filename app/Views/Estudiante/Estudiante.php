@@ -53,9 +53,8 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-	  <form id="formEstudiante" name="formEstudiante">
+	  <form id="formEstudiante" >
       	<div class="modal-body">
-			<input type="hidden" name="id" id="id" value="">
 			<div class="form-group">
 				<label class="control-label" for="dni">DNI</label>
 				<input class="form-control" type="text" id="dni" name="dni" placeholder="Ingrese número de identificación" required>
@@ -69,12 +68,16 @@
 				<input class="form-control" type="text" id="apellido" name="apellido" placeholder="Ingrese apellidos completo" required>
 			</div>
 			<div class="form-group">
+				<label class="control-label" for="telefono">Teléfono</label>
+				<input class="form-control" type="text" id="telefono" name="telefono" placeholder="Ingrese número de teléfono" required>
+			</div>
+			<div class="form-group">
 				<label class="control-label" for="correo">Correo</label>
 				<input class="form-control" type="email" id="correo" name="correo" placeholder="Ingrese correo electrónico" required>
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="telefono">Teléfono</label>
-				<input class="form-control" type="text" id="telefono" name="telefono" placeholder="Ingrese número de teléfono" required>
+				<label class="control-label" for="password">Contraseña</label>
+				<input class="form-control" type="password" id="password" name="password" placeholder="Ingrese contraseña" required>
 			</div>
 			<div class="form-group">
 				<label for="estado">Estado</label>

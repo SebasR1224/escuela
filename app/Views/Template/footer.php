@@ -9,5 +9,6 @@
     <script type="text/javascript" src="<?php echo media()?>/js/plugins/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="<?php echo media()?>/js/plugins/dataTables.bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo media()?>/js/functionsEstudiantes.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

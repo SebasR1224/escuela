@@ -17,9 +17,9 @@
             $query = "SELECT * FROM estudiantes WHERE id=$id";
         }
 
-        public function setEstudiante(string $dni, string $nombre, string $apellido, int $telefono, string $email, string $password, int $estado){
+        public function setEstudiante(string $dni, string $nombre, string $apellido, string $telefono, string $email, string $password, string $estado){
             $query = "INSERT INTO estudiantes(dni, nombre, apellido, telefono, email, password, estado) VALUES (?,?,?,?,?,?,?)";
-            $data = array($dni, $nombre, $apellido, $telefono, $email, $password, $estado);
+            $data = array($dni, $nombre, $apellido, $telefono, $email, password_hash($password, PASSWORD_DEFAULT), $estado);
             $request = $this->insert($query, $data);
             return $request;
         }

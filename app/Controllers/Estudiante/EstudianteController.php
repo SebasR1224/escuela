@@ -29,5 +29,10 @@ require_once LIBS_ROUTE .'Session.php';
 
             echo json_encode($data);
         }
+
+        public function store($params){
+            $this->model->setEstudiante($params['dni'], $params['nombre'], $params['apellido'], $params['telefono'], $params['correo'], $params['password'], $params['estado']);
+        }
+
     }
 ?>

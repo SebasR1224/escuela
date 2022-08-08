@@ -1,5 +1,5 @@
 
-$('#tableEstudiantes').DataTable({
+tableEstudiantes = $('#tableEstudiantes').DataTable({
     "ajax": {
         "method": "POST",
         "url": "/escuela/estudiante/index"
@@ -38,3 +38,35 @@ $('#tableEstudiantes').DataTable({
         { "width": "5%", "targets": 7 } 
     ]
 });
+
+$("#formEstudiante").on('submit', function(e){
+
+    e.preventDefault();
+    console.log($(this).serialize());
+    $.ajax({
+        url: '/escuela/estudiante/store',
+        type: 'POST',
+        data:  {
+            dni:  $("#dni").val(),
+            nombre:  $("#nombre").val(),
+            apellido:  $("#apellido").val(),
+            telefono:  $("#telefono").val(),
+            correo:  $("#correo").val(),
+            password:  $("#password").val(),
+            estado:  $("#estado").val(),
+        },
+        success: function(response) {
+            $('#modalEstudiante').modal('hide')
+            tableEstudiantes.ajax.reload(null, false)
+            Swal.fire({
+                icon: "success",
+                title: "Estudiante registrado correctamente",
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 1500,
+            })
+        }
+    })
+})
+
