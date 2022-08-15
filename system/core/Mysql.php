@@ -61,10 +61,9 @@
             return $delete;
         }
 
-        public function sigIn(string $email){
-            $email = $this->conexion->quote($email);
-
-            $this->query = "SELECT * FROM estudiantes where email={$email}";
+        public function sigIn(string $value){
+            $value = $this->conexion->quote($value);
+            $this->query = "SELECT * FROM users where email={$value} OR username={$value}";
             $result = $this->conexion->prepare($this->query);
             $result->execute();
             $data = $result->fetch(PDO::FETCH_ASSOC);

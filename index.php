@@ -3,7 +3,6 @@
 
     require_once('system/config.php');
     require_once('system/core/autoload.php');
-    require_once('system/helpers/helpers.php');
     
     $router = new Router();
 
@@ -15,7 +14,7 @@
     if(!CoreHelper::validateController($controller))
     $controller = 'ErrorPage';
 
-    require PATH_CONTROLLERS . "{$controller}/{$controller}Controller.php";
+    require PATH_CONTROLLERS . "{$controller}Controller.php";
 
     $controller .= 'Controller';
 

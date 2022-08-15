@@ -17,7 +17,8 @@ require_once LIBS_ROUTE .'Session.php';
 
     public function exec()
     {
-        $this->render(__CLASS__);
+        $params = array('username' => $this->session->get('username'), 'email' => $this->session->get('email'));
+        $this->render(__CLASS__, $params);
     }
 
     public function logout()

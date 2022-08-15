@@ -1,6 +1,6 @@
 <?php 
 defined('BASE_PATH') or exit('No se permite acceso directo');
-require_once (ROOT . '/escuela/app/Models/Home/HomeModel.php');
+require_once (ROOT . '/escuela/app/Models/HomeModel.php');
 
 
     class HomeController extends Controller
@@ -19,8 +19,7 @@ require_once (ROOT . '/escuela/app/Models/Home/HomeModel.php');
 
     public function show()
     {
-        $params = array('nombre' =>  'Mundo');
-        $this->render(__CLASS__, $params); 
+        $this->render(__CLASS__); 
     }
     }
 ?>

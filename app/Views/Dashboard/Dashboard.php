@@ -1,4 +1,4 @@
-<?php echo view_header()?>
+<?php require_once("./app/Views/Template/header.php"); ?>
 <main class="app-content">
     <div class="app-title">
     <div>
@@ -16,4 +16,4 @@
     </div>
     </div>
 </main>
-<?php echo view_footer()?>
+<?php require_once("./app/Views/Template/footer.php"); ?>

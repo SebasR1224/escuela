@@ -9,7 +9,7 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href="<?php echo media()?>/css/login/style.css">
+	<link rel="stylesheet" href="<?php echo FOLDER_MEDIA?>/css/login/style.css">
 
 	</head>
 	<body>
@@ -26,9 +26,9 @@
 		      	<div class="icon d-flex align-items-center justify-content-center mb-4">
 		      		<span class="fa fa-user-o"></span>
 		      	</div>
-				<form action="<?php echo base_url()?>/login/signIn" method="POST" class="login-form">
+				<form action="<?php echo FOLDER_PATH?>/login/signIn" method="POST" class="login-form">
 		      		<div class="form-group">
-		      			<input type="text" class="form-control rounded-left" placeholder="Email" id="email" name="email" >
+		      			<input type="text" class="form-control rounded-left" placeholder="Email o username" id="value" name="value" >
 		      		</div>
 					<div class="form-group d-flex">
 						<input type="password" class="form-control rounded-left" placeholder="Contraseña" id="password" name="password" >
@@ -36,6 +36,17 @@
 					<div class="form-group d-flex">
 						<label class="checkbox-primary"><?php !empty($error) ? print($error) : ''; ?></label>
 					</div>
+					<div class="form-group d-md-flex">
+						<div class="w-50">
+							<label class="checkbox-wrap checkbox-primary">Recordar
+								<input type="checkbox" checked="">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<div class="w-50 text-md-right">
+							<a href="<?= FOLDER_PATH?>">Volver</a>
+						</div>
+	            	</div>
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary rounded submit p-3 px-5">Ingresar</button>
 					</div>
